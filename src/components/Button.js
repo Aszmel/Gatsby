@@ -16,9 +16,13 @@ const Button = styled.button`
   font-weight: 800;
   transition: box-shadow 0.3s ease;
 
+  ${({ theme }) => theme.media.tablet} {
+    background: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.dark};
+  }
+
   :hover {
     box-shadow: 0 10px 20px -15px red;
   }
 `
-
 export default Button

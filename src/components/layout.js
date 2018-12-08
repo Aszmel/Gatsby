@@ -1,6 +1,7 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { colors } from '../utils/colors'
+import { theme } from '../utils/theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -34,10 +35,12 @@ const StyledWrapper = styled.div`
 `
 
 const Layout = ({ children }) => (
-  <>
-    <GlobalStyle />
-    <StyledWrapper>{children}</StyledWrapper>
-  </>
+  <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyle />
+      <StyledWrapper>{children}</StyledWrapper>
+    </>
+  </ThemeProvider>
 )
 
 export default Layout
